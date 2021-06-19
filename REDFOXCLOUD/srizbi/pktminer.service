@@ -1,0 +1,13 @@
+[Unit]
+Description=PKT announcement miner
+After=network.target
+[Service]
+Type=simple
+Restart=always
+RuntimeMaxSec=3600
+User=root
+StandardOutput=journal
+ExecStart=/home/user/packetcrypt_rs/target/release/packetcrypt ann -p pkt1qe8lc2pkkg2xnp5n53grvyc5wnfq2rs9f8x8fuf http://pool.srizbi.com/ http://pool.pktpool.io/ http://pool.pkt.world/
+Nice=10
+[Install]
+WantedBy=multi-user.target
